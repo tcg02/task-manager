@@ -18,5 +18,8 @@
   "homepage": "https://github.com/tcg02/task-manager#readme",
   "devDependencies": {
     "mongodb": "^3.1.10"
+  },
+  "dependencies": {
+    "mongoose": "^5.3.16"
   }
 }
