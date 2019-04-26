@@ -70,12 +70,28 @@ MongoClient.connect(connectionURL, { useNewUrlParser: true}, (error,client)=>{
     //   console.log(error)
     // })
       
-    db.collection("tasks").updateMany({
-      completed:false
-    },{
-      $set:{
-        completed:true
-      }
+    // db.collection("tasks").updateMany({
+    //   completed:false
+    // },{
+    //   $set:{
+    //     completed:true
+    //   }
+    // }).then((result)=>{
+    //   console.log(result.modifiedCount+" item modified")
+    // }).catch((error)=>{
+    //   console.log(error)
+    // })
+
+    // db.collection("users").deleteMany({
+    //   age : 13
+    // }).then((result)=>{
+    //   console.log(" item Deleted")
+    // }).catch((error)=>{
+    //   console.log(error)
+    // })
+
+    db.collection("users").deleteOne({
+      name: "SDahal"
     }).then((result)=>{
       console.log(result)
     }).catch((error)=>{
