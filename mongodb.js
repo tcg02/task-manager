@@ -32,15 +32,55 @@ MongoClient.connect(connectionURL, { useNewUrlParser: true}, (error,client)=>{
 
     // })
 
-    db.collection('users').find({age: 31}).toArray((errors, users)=>{
-      console.log(users)
-    })
+    // db.collection('users').find({age: 31}).toArray((errors, users)=>{
+    //   console.log(users)
+    // })
 
-    db.collection('users').find({age: 31}).count((errors, count)=>{
-      console.log(count)
-    })
+    // db.collection('users').find({age: 31}).count((errors, count)=>{
+    //   console.log(count)
+    // })
 
-     
+    //  db.collection('tasks').findOne({_id: new ObjectID("5cc20797469e102fd4cc2b47")}, (error,task)=>{
+    //    if(error){
+    //     return console.log('Unable to fetch')
+    //    }
+    //    if(!task){
+    //      return console.log('task not found')
+    //    }
+
+    //    console.log(task)
+
+    //  })
+
+
+    //  db.collection("tasks").find({completed:false}).toArray((error,tasks)=>{
+    //    console.log("Incomplete tasks:")
+    //    console.log(tasks)
+    //  })
+
+    // db.collection("users").updateOne({
+    //   _id: new ObjectID("5cc2026c72c0b12bbcd102be")
+    // },{
+    //   $inc:{       
+    //     age:-1
+    //   }
+    // }).then((result)=>{
+    //   console.log(result)
+    // }).catch((error)=>{
+    //   console.log(error)
+    // })
+      
+    db.collection("tasks").updateMany({
+      completed:false
+    },{
+      $set:{
+        completed:true
+      }
+    }).then((result)=>{
+      console.log(result)
+    }).catch((error)=>{
+      console.log(error)
+    })
 
 
 })
