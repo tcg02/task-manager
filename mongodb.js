@@ -20,54 +20,27 @@ MongoClient.connect(connectionURL, { useNewUrlParser: true}, (error,client)=>{
 
     const db = client.db(databaseName)
 
-    // db.collection('users').insertOne({    //    
-    //     name: 'Peter',
-    //     age: 30
-    // }, (error,result)=>{
-    //     if(error){
-    //         return console.log('Unable to insert user')
-    //     }
+    // db.collection('users').findOne({_id: new ObjectID("5cc200faa197473f24d38d4a")},(error,user)=>{
+    //   if(error){
+    //     return console.log('Unable to fetch')
+    //   }
+    //   if(!user){
+    //     return console.log('User not in database')
+    //   }
 
-    //     console.log(result.insertedCount)
+    //   console.log(user)
+
     // })
 
-    // db.collection('users').insertMany([{
-    //     name: 'Not santosh',
-    //     age: 13
-    // },
-    // {
-    //     name: 'dahal',
-    //     age:27
-    // }
-    // ],(error, result)=>{
-    //     if(error){
-    //         return console.log('Unable to insert user')
-    //     }
+    db.collection('users').find({age: 31}).toArray((errors, users)=>{
+      console.log(users)
+    })
 
-    //     console.log(result.insertedIds)
-    // })
+    db.collection('users').find({age: 31}).count((errors, count)=>{
+      console.log(count)
+    })
 
-    // db.collection('tasks').insertMany([
-    //     {
-    //         description:"Learn nodejs",
-    //         completed:true
-    //     },
-    //     {
-    //         description: "Learn MongoDB",
-    //         completed: false
-    //     },
-    //     {
-    //         description: "Implement learned knowlege to working site",
-    //         completed: false
-    //     }
-    // ],(error,result)=>{
-    //     if(error){
-    //         return console.log('Unable to insert task')
-    //     }
-
-    //     console.log(result.insertedIds)
-    // })
-
+     
 
 
 })
