@@ -4,7 +4,9 @@
   "description": "Task manager app using nodejs and mangodb",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+     "start" :"node src/index.js",
+     "dev" : "nodemon src/index.js"
+
   },
   "repository": {
     "type": "git",
@@ -17,9 +19,11 @@
   },
   "homepage": "https://github.com/tcg02/task-manager#readme",
   "devDependencies": {
-    "mongodb": "^3.1.10"
+    "mongodb": "^3.1.10",
+    "nodemon": "^1.18.9"
   },
   "dependencies": {
+    "express": "^4.16.4",
     "mongoose": "^5.3.16"
   }
 }
